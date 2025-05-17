@@ -44,7 +44,7 @@ function App() {
     setPrompt('');
 
     try {
-      const response = await fetch('http://localhost:5000/chat', {
+      const response = await fetch('https://Hacksbya.pythonanywhere.com/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ prompt }),
@@ -69,7 +69,7 @@ function App() {
   const startNewChat = async () => {
     try {
       // Call backend to clear chat history
-      await fetch('http://localhost:5000/clear-chat', {
+      await fetch('https://Hacksbya.pythonanywhere.com/clear-chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
       });
@@ -99,7 +99,7 @@ function App() {
 
   const updatePersona = async (name) => {
     try {
-      await fetch('http://localhost:5000/update-persona', {
+      await fetch('https://Hacksbya.pythonanywhere.com/update-persona', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ persona: name }),
